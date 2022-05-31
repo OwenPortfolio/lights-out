@@ -30,6 +30,7 @@ code {
 }
 
 .light {
+  background-color: rgb(86, 164, 119);
   display: flex;
   justify-content: center;
   align-items: center;

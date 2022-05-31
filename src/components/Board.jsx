@@ -1,28 +1,32 @@
+
+import Box from '../components/Box';
+
 const Board = () => {
+
     return <section class="gameBoard">
         <div class="row">
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
+            <Box/>
+            <Box/>
+            <Box/>
+            <Box/>
         </div>
         <div class="row">
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
+            <Box/>
+            <Box/>
+            <Box/>
+            <Box/>
         </div>
         <div class="row">
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
+            <Box/>
+            <Box/>
+            <Box/>
+            <Box/>
         </div>
         <div class="row">
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
-            <div class ="light">BOX</div>
+            <Box/>
+            <Box/>
+            <Box/>
+            <Box/>
         </div>
 
 
