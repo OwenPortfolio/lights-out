@@ -19,18 +19,21 @@ code {
     monospace;
 }
 
-.row {
-  display: flex;
+.grid-container {
+  display: grid;
+  grid-template-columns: 7em 7em 7em 7em;
+  grid-template-rows: 7em 7em 7em 7em;
 }
 
-.row div {
+.grid-container div {
+  display: grid;
   border: 0.5em solid rgb(65, 125, 198);
   width: 6em;
   height: 6em;
 }
 
 .light {
-  background-color: rgb(86, 164, 119);
+  background-color: rgb(95, 160, 122);
   display: flex;
   justify-content: center;
   align-items: center;

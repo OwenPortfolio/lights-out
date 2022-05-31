@@ -4,7 +4,7 @@ const Box = () => {
 
     const[isOn, setIsOn] = useState('false');
     const lightswitch = () => {
-        setIsOn(current => !current);
+        setIsOn(current => !current);        
     }
     return <div class="light" style={{backgroundColor: isOn ? '#21e171' : ''}} onClick={lightswitch}></div>
 }
