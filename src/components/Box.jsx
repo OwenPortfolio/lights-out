@@ -30,10 +30,6 @@ const Box = () => {
             }
         }
     }
-    // const neighbourSwitch = () => {
-    //     console.log("triggered neighbourSwitch")
-    //     setIsOn(current => !current);
-    // }
     return <div class="light" style={{backgroundColor: isOn ? '#21e171' : ''}} onClick = {lightswitch} ></div>
 }
 
