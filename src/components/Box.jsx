@@ -5,16 +5,26 @@ const Box = () => {
     const[isOn, setIsOn] = useState(true);
     
     const lightswitch = (event) => {
-        console.log(event)
         setIsOn(current => !current);
         const id = event.target.parentElement.id;
-        swapNeighbour(id, event)
+        swapNeighbours(id, event)
     }
-    const swapNeighbour = (id, event) => {
-        let neighbourId = id[0] + (id[1] -1)
-        let neighbour = document.getElementById(neighbourId).firstChild;
-        if(event.clientX != 0){
-        neighbour.click();
+    const swapNeighbours = (id, event) => {
+        let row = id[0];
+        let column = id[1]
+
+        let idShift = {A:'', B:'A', C:'B', D:'C'}
+        console.log(idShift[row]);
+        let leftNeighbourId = row + (column -1)
+        let leftNeighbour = document.getElementById(leftNeighbourId).firstChild;
+        if(event.clientX !== 0){
+        leftNeighbour.click();
+
+        let topNeighbourId = idShift[row] + column;
+        let topNeighbour = document.getElementById(topNeighbourId).firstChild;
+        if(event.clientX !== 0){
+            topNeighbour.click();
+        }
         }
     }
     // const neighbourSwitch = () => {
