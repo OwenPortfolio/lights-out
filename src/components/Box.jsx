@@ -1,24 +1,27 @@
 import {useState} from 'react';
 
 const Box = () => {
-    const[isOn, setIsOn] = useState('false');
 
+    const[isOn, setIsOn] = useState(true);
+    
     const lightswitch = (event) => {
+        console.log(event)
         setIsOn(current => !current);
         const id = event.target.parentElement.id;
-        console.log(id)
-        neighbour(id)
-        }
-    const[count, setCount] = useState(0);
-
-    const neighbour = (id) => {
-        let neighbourId = id[0] + (id[1] -1)
-        let light = document.getElementById(neighbourId).children[0]
-
-        console.log(document.getElementById(id).children)
-        light.click();
+        swapNeighbour(id, event)
     }
-    return <div class="light" style={{backgroundColor: isOn ? '#21e171' : ''}} onClick={lightswitch}></div>
+    const swapNeighbour = (id, event) => {
+        let neighbourId = id[0] + (id[1] -1)
+        let neighbour = document.getElementById(neighbourId).firstChild;
+        if(event.clientX != 0){
+        neighbour.click();
+        }
+    }
+    // const neighbourSwitch = () => {
+    //     console.log("triggered neighbourSwitch")
+    //     setIsOn(current => !current);
+    // }
+    return <div class="light" style={{backgroundColor: isOn ? '#21e171' : ''}} onClick = {lightswitch} ></div>
 }
 
 export default Box;
