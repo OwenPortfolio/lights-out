@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header'
 import Board from './components/Board'
 import NewGameButton from './components/NewGameButton'
+import WinChecker from './components/WinChecker'
 
 function App() {
   return (
@@ -11,6 +12,9 @@ function App() {
       <Board/>
       <br></br>
       <NewGameButton/>
+      <br></br>
+      <br></br>
+      <WinChecker/>
       </body>
     </div>
   );
