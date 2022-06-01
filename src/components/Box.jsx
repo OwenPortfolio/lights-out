@@ -2,8 +2,8 @@ import {useState} from 'react';
 
 const Box = () => {
 
-    const[isOn, setIsOn] = useState(true);
-    
+    const[isOn, setIsOn] = useState();
+
     const lightswitch = (event) => {
         setIsOn(current => !current);
         const id = event.target.parentElement.id;
@@ -12,19 +12,22 @@ const Box = () => {
     const swapNeighbours = (id, event) => {
         let row = id[0];
         let column = id[1]
+        
+        if(row !== 'A'){
+            let idShift = {A:'', B:'A', C:'B', D:'C'}
+            let topNeighbourId = idShift[row] + column;
+            let topNeighbour = document.getElementById(topNeighbourId).firstChild;
+            if(event.clientX !== 0){
+                topNeighbour.click();
+            }
+        }   
 
-        let idShift = {A:'', B:'A', C:'B', D:'C'}
-        console.log(idShift[row]);
-        let leftNeighbourId = row + (column -1)
-        let leftNeighbour = document.getElementById(leftNeighbourId).firstChild;
-        if(event.clientX !== 0){
-        leftNeighbour.click();
-
-        let topNeighbourId = idShift[row] + column;
-        let topNeighbour = document.getElementById(topNeighbourId).firstChild;
-        if(event.clientX !== 0){
-            topNeighbour.click();
-        }
+        if(column !== 1){
+            let leftNeighbourId = row + (column -1)
+            let leftNeighbour = document.getElementById(leftNeighbourId).firstChild;
+            if(event.clientX !== 0){
+                leftNeighbour.click();
+            }
         }
     }
     // const neighbourSwitch = () => {

@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+#NewGameButton{
+  margin: 2em;
+  transform: scale(2)
+}
+
 body {
 
   margin: 0;

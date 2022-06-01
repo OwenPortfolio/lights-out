@@ -1,6 +1,7 @@
 import './App.css';
 import Header from './components/Header'
 import Board from './components/Board'
+import NewGameButton from './components/NewGameButton'
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
       <body>
       <Header/>
       <Board/>
+      <br></br>
+      <NewGameButton/>
       </body>
     </div>
   );

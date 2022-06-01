@@ -1,0 +1,21 @@
+const NewGameButton = () => {
+
+    let grid = ['A1', 'A2', 'A3', 'A4',
+                'B1', 'B2', 'B3', 'B4',
+                'C1', 'C2', 'C3', 'C4',
+                'D1', 'D2', 'D3', 'D4']
+
+    const randomise = () => {
+
+        for(let i = 0; i < grid.length; i++){
+            let randomElement = Math.floor(Math.random() * 2);
+            if(randomElement === 0){
+                let tile = document.getElementById(grid[i]).firstChild;
+                tile.click();
+            }
+        }
+    }
+    return <button id='NewGameButton' onClick={randomise} >New Game</button>
+}
+
+export default NewGameButton;
