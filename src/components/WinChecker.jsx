@@ -13,7 +13,6 @@ const WinChecker = () => {
             let tile = document.getElementById(grid[i]).firstChild
             if(tile.style[0] !== 'background-color'){
                 lights++;
-                console.log(lights)
             }
             if(lights === 25){
                 document.getElementById('NewGameButton').click();
