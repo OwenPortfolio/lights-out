@@ -50,7 +50,6 @@ const Box = () => {
 
         if(column !== 5){
             let rightNeighbourId = row + (column+1)
-            console.log(rightNeighbourId)
             let rightNeighbour = document.getElementById(rightNeighbourId).firstChild;
             if(event.clientX !== 0){
                 rightNeighbour.click();
