@@ -6,7 +6,6 @@ const WinChecker = () => {
     'D1', 'D2', 'D3', 'D4']
 
     const checkWins = () => {
-        console.log('win checked')
         let lights = 0;
         
         for(let i = 0; i < grid.length; i++){

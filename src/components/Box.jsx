@@ -10,7 +10,6 @@ const Box = () => {
 
     const lightswitch = (event) => {
         setIsOn(current => !current);
-        console.log('light switched')
         const id = event.target.parentElement.id;
         swapNeighbours(id, event)
         setTimeout(
@@ -21,10 +20,10 @@ const Box = () => {
     }
     const swapNeighbours = (id, event) => {
         let row = id[0];
-        let column = id[1]
+        let column = parseInt(id[1])
         
         if(row !== 'A'){
-            let idShift = {A:'', B:'A', C:'B', D:'C'}
+            let idShift = {B:'A', C:'B', D:'C', E:'D'}
             let topNeighbourId = idShift[row] + column;
             let topNeighbour = document.getElementById(topNeighbourId).firstChild;
             if(event.clientX !== 0){
@@ -32,16 +31,34 @@ const Box = () => {
             }
         }   
 
-        if(column !== '1'){
+        if(column !== 1){
             let leftNeighbourId = row + (column -1)
             let leftNeighbour = document.getElementById(leftNeighbourId).firstChild;
             if(event.clientX !== 0){
                 leftNeighbour.click();
             }
         }
+
+        if(row !== 'E'){
+            let idShift = {A:'B', B:'C', C:'D', D:'E'}
+            let bottomNeighbourId = idShift[row] + column;
+            let bottomNeighbour = document.getElementById(bottomNeighbourId).firstChild;
+            if(event.clientX !== 0){
+                bottomNeighbour.click();
+            }
+        }   
+
+        if(column !== 5){
+            let rightNeighbourId = row + (column+1)
+            console.log(rightNeighbourId)
+            let rightNeighbour = document.getElementById(rightNeighbourId).firstChild;
+            if(event.clientX !== 0){
+                rightNeighbour.click();
+            }
+        }
     }
 
-    return <div class="light" style={{backgroundColor: isOn ? '#21e171' : ''}} onClick={lightswitch}></div>
+    return <div class="light" style={{backgroundColor: isOn ? '#21e171' : '', borderColor: isOn ? 'yellow' : '', borderStyle: isOn ? 'solid' : ''}} onClick={lightswitch}></div>
 }
 
 export default Box;
