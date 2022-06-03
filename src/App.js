@@ -4,10 +4,11 @@ import Board from './components/Board'
 import NewGameButton from './components/NewGameButton'
 import WinChecker from './components/WinChecker'
 
+
 function App() {
   return (
     <div className="App">
-      <body>
+      <body >
       <Header/>
       <Board/>
       <br></br>

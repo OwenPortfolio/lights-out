@@ -15,7 +15,7 @@ const NewGameButton = () => {
             }
         }
     }
-    return <button id='NewGameButton' onClick={randomise} >New Game</button>
+    return <button id='NewGameButton' onClick={randomise} >New Random Board!</button>
 }
 
 export default NewGameButton;

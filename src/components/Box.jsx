@@ -2,12 +2,22 @@ import {useState} from 'react';
 
 const Box = () => {
 
-    const[isOn, setIsOn] = useState();
+    const winCheck = (event) => {
+            document.getElementById('WinChecker').click();
+    }    
+
+    const[isOn, setIsOn] = useState(true);
 
     const lightswitch = (event) => {
         setIsOn(current => !current);
+        console.log('light switched')
         const id = event.target.parentElement.id;
         swapNeighbours(id, event)
+        setTimeout(
+            function () {
+                winCheck();
+            }, 250
+        )
     }
     const swapNeighbours = (id, event) => {
         let row = id[0];
@@ -22,7 +32,7 @@ const Box = () => {
             }
         }   
 
-        if(column !== 1){
+        if(column !== '1'){
             let leftNeighbourId = row + (column -1)
             let leftNeighbour = document.getElementById(leftNeighbourId).firstChild;
             if(event.clientX !== 0){
@@ -30,7 +40,8 @@ const Box = () => {
             }
         }
     }
-    return <div class="light" style={{backgroundColor: isOn ? '#21e171' : ''}} onClick = {lightswitch} ></div>
+
+    return <div class="light" style={{backgroundColor: isOn ? '#21e171' : ''}} onClick={lightswitch}></div>
 }
 
 export default Box;

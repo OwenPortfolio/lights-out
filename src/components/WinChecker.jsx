@@ -5,25 +5,20 @@ const WinChecker = () => {
     'C1', 'C2', 'C3', 'C4',
     'D1', 'D2', 'D3', 'D4']
 
-    let lights = 0;
-
     const checkWins = () => {
-        lights = 0;
-        for(let i = 0; i <= grid.length; i++){
+        console.log('win checked')
+        let lights = 0;
+        
+        for(let i = 0; i < grid.length; i++){
             let tile = document.getElementById(grid[i]).firstChild
-            if(tile.style[0] === 'background-color'){
-                console.log(lights)
+            if(tile.style[0] !== 'background-color'){
                 lights++;
             }
-            if((lights) === 0){
-                alert('You Win!')
-                lights++
+            if(lights === 16){
                 document.getElementById('NewGameButton').click();
+                alert('You Win!')
             }
         }
-
-
-
     }
 
 
