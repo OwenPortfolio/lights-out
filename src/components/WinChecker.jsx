@@ -23,7 +23,7 @@ const WinChecker = () => {
 
 
 
- return <button id="WinChecker" onClick={checkWins}>HELLO</button>
+ return <div id="WinChecker" onClick={checkWins}></div>
 }
 
 export default WinChecker;

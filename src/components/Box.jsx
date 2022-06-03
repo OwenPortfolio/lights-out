@@ -16,7 +16,7 @@ const Box = () => {
         setTimeout(
             function () {
                 winCheck();
-            }, 250
+            }, 100
         )
     }
     const swapNeighbours = (id, event) => {
