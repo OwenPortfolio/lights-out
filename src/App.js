@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Board from './components/Board'
 import NewGameButton from './components/NewGameButton'
 import WinChecker from './components/WinChecker'
-
+import Difficulty from './components/Difficulty'
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <NewGameButton/>
       <br></br>
       <br></br>
+      <Difficulty/>
       <WinChecker/>
       </body>
     </div>

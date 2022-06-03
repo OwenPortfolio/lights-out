@@ -19,6 +19,7 @@ const Box = () => {
         )
     }
     const swapNeighbours = (id, event) => {
+        let difficulty = document.getElementById('difficulty').textContent
         let row = id[0];
         let column = parseInt(id[1])
         
@@ -38,21 +39,23 @@ const Box = () => {
                 leftNeighbour.click();
             }
         }
+        
+        if(difficulty === 'Hard'){
+            if(row !== 'E'){
+                let idShift = {A:'B', B:'C', C:'D', D:'E'}
+                let bottomNeighbourId = idShift[row] + column;
+                let bottomNeighbour = document.getElementById(bottomNeighbourId).firstChild;
+                if(event.clientX !== 0){
+                    bottomNeighbour.click();
+                }
+            }   
 
-        if(row !== 'E'){
-            let idShift = {A:'B', B:'C', C:'D', D:'E'}
-            let bottomNeighbourId = idShift[row] + column;
-            let bottomNeighbour = document.getElementById(bottomNeighbourId).firstChild;
-            if(event.clientX !== 0){
-                bottomNeighbour.click();
-            }
-        }   
-
-        if(column !== 5){
-            let rightNeighbourId = row + (column+1)
-            let rightNeighbour = document.getElementById(rightNeighbourId).firstChild;
-            if(event.clientX !== 0){
-                rightNeighbour.click();
+            if(column !== 5){
+                let rightNeighbourId = row + (column+1)
+                let rightNeighbour = document.getElementById(rightNeighbourId).firstChild;
+                if(event.clientX !== 0){
+                    rightNeighbour.click();
+                }
             }
         }
     }
