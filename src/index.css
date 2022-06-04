@@ -32,8 +32,8 @@ code {
   height: 35em;
   background-color: rgb(0, 0, 0);
   display: grid;
-  grid-template-columns: 6.5em 6.5em 6.5em 6.5em 6.5em;
-  grid-template-rows: 6.5em 6.5em 6.5em 6.5em 6.5em;
+  grid-template-columns: 6em 6em 6em 6em 6em;
+  grid-template-rows: 6em 6em 6em 6em 6em;
 }
 
 .grid-container div {
